@@ -1,0 +1,152 @@
+.header {
+  position: relative;
+
+  &__logo {
+    width: 100%;
+
+    @media only screen and (min-width: $bp-desk) {
+      width: 140%;
+    }
+  }
+
+  background-color: $color-secondary;
+  grid-column: full-start / full-end;
+  // grid-row: 1/2;
+  background-image: linear-gradient(
+      rgba($color-secondary-dark, 0.6),
+      rgba($color-secondary-dark, 0.6)
+    ),
+    url(../img/header-1.jpg);
+
+  background-size: cover;
+  background-position: center;
+  padding: 2rem 4rem;
+
+  &__box {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    margin-bottom: 50vh;
+  }
+
+  .list {
+    display: flex;
+    align-items: center;
+    gap: 2rem;
+    font-family: $font-family-2;
+    font-size: 1.8rem;
+    cursor: pointer;
+    list-style: none;
+
+    @media only screen and (max-width: $bp-1) {
+      flex-direction: column;
+      gap: 4.8rem;
+      font-size: 3rem;
+    }
+
+    &__link {
+      transition: all 0.5s;
+
+      &:link,
+      &:visited {
+        text-decoration: none;
+        color: $color-white;
+        font-weight: 500;
+
+        @media only screen and (max-width: $bp-1) {
+          color: $color-text-dark;
+        }
+      }
+
+      &:hover,
+      &:active {
+        color: $color-primary;
+      }
+    }
+  }
+
+  &__btn {
+    &:hover,
+    &:active {
+      background-color: $color-primary;
+      color: $color-white;
+      border: 1px solid $color-primary;
+    }
+  }
+
+  .icon-mobile-nav {
+    position: relative;
+    width: 4rem;
+    height: 4rem;
+    fill: $color-white;
+
+    z-index: 30;
+  }
+
+  .icon-mobile-nav[name="close-outline"] {
+    display: none;
+    fill: $color-text-dark;
+  }
+
+  /* MOBILE NAVIGATION */
+
+  .btn-mobile-nav {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    border: none;
+    background: none;
+    cursor: pointer;
+
+    display: none;
+
+    @media only screen and (max-width: $bp-1) {
+      display: block;
+    }
+  }
+}
+
+@media only screen and (max-width: $bp-1) {
+  .main-nav {
+    background-color: $color-white;
+    -webkit-backdrop-filter: blur(5px);
+    backdrop-filter: blur(10px);
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100vh;
+    transform: translateX(100%);
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.5s ease-in;
+
+    /* 1) Hide it visually */
+    opacity: 0;
+
+    /* 2) Make it unaccessible to mouse and keyboard */
+    pointer-events: none;
+
+    /* 3) Hide it from screen readers */
+    visibility: hidden;
+  }
+
+  .nav-open .main-nav {
+    opacity: 1;
+    pointer-events: auto;
+    visibility: visible;
+    transform: translateX(0);
+  }
+
+  .nav-open .icon-mobile-nav[name="close-outline"] {
+    display: block;
+  }
+
+  .nav-open .icon-mobile-nav[name="menu-outline"] {
+    display: none;
+  }
+}

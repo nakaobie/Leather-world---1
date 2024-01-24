@@ -1,0 +1,32 @@
+.about {
+  grid-column: main-start/main-end;
+  // grid-column: col-start 2 / col-end 8;
+  // grid-row: 2/3;
+  margin: 10rem 4rem;
+
+  @media only screen and (max-width: $bp-m) {
+    grid-column: full-start/full-end;
+  }
+
+  display: grid;
+  align-content: center;
+  justify-items: start;
+
+  &__intro {
+    color: $color-primary;
+    margin-bottom: 6rem;
+  }
+
+  &__heading {
+    text-align: center;
+    margin-bottom: 2rem;
+  }
+
+  &__content {
+    color: $color-text-light;
+  }
+
+  &__content:not(:last-child) {
+    margin-bottom: 4rem;
+  }
+}

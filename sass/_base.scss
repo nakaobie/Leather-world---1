@@ -1,0 +1,125 @@
+// COLOR VARIABLES
+$color-primary: #ff7a3d;
+
+$color-secondary: #a06247;
+$color-secondary-light: #b38f81;
+$color-secondary-dark: #8f4727;
+
+$color-whatsapp: #25d366;
+$color-white: #fff;
+
+$color-text-dark: #1e1810;
+$color-text-light: #333;
+
+$font-family-1: "Nunito", sans-serif;
+$font-family-2: "Cormorant Garamond", serif;
+
+// RESPONSIVE BREAKPOINTS
+$bp-1: 59em; // 944px
+$bp-m: 50em; // 800px
+$bp-2: 48em; // 768px
+$bp-3: 43em; // 688px
+$bp-desk: 112.5em; // 1800px+
+// desktop: 112.5em = 1800px+;
+
+@media only screen and (max-width: $bp-3) {
+}
+
+//
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  font-size: 62.5%;
+  overflow-x: hidden;
+
+  @media only screen and (min-width: $bp-desk) {
+    font-size: 100%;
+  }
+}
+
+body {
+  font-family: $font-family-1;
+  color: $color-text-dark;
+  overflow-x: hidden;
+}
+
+.container {
+  display: grid;
+
+  grid-template-rows: 100vh repeat(7, min-content);
+
+  @media only screen and (max-width: $bp-m) {
+    grid-template-rows: 100vh repeat(8, min-content);
+  }
+
+  // grid-template-rows: 100vh min-content 40vw repeat(5, min-content);
+
+  grid-template-columns:
+    [full-start] minmax(6rem, 1fr) [main-start] repeat(
+      9,
+      [col-start] minmax(min-content, 13rem) [col-end]
+    )
+    [main-end] minmax(6rem, 1fr) [full-end];
+}
+
+.btn {
+  padding: 1.3rem 2.3rem;
+  background-color: transparent;
+  color: $color-white;
+  border: 1px solid $color-white;
+  outline: none;
+  font-weight: 700;
+  line-height: 1;
+  cursor: pointer;
+  transition: all 0.5s;
+
+  @media only screen and (min-width: $bp-desk) {
+    font-size: 100%;
+  }
+}
+
+::selection {
+  color: $color-text-dark;
+  background-color: $color-primary;
+}
+
+.dash {
+  width: 8rem;
+  border-bottom: 2px solid $color-primary;
+  margin-bottom: 6rem;
+}
+
+.intro {
+  font-family: $font-family-2;
+  font-size: 1.8rem;
+}
+
+.heading-2 {
+  font-size: 6.4rem;
+  font-weight: 400;
+  font-family: $font-family-2;
+  line-height: 1.2;
+}
+
+.heading-3 {
+  font-size: 4rem;
+  font-style: italic;
+  font-family: $font-family-2;
+  line-height: 1;
+}
+
+.heading-4 {
+  font-size: 4rem;
+  font-family: $font-family-2;
+  font-weight: 300;
+}
+
+.content {
+  font-size: 1.6rem;
+  line-height: 2.25rem;
+}

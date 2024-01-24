@@ -1,0 +1,117 @@
+.chat {
+  position: fixed;
+  bottom: 9rem;
+  right: 2.5rem;
+
+  display: block;
+
+  // display: none;
+
+  z-index: 20;
+
+  &__box {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    align-self: center;
+    box-shadow: 1rem 1rem 4rem rgba(0, 0, 0, 0.22);
+
+    transform: translateY(0);
+    transition: all 0.2s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+  }
+
+  &__hidden-box {
+    transform: translateY(10%);
+    max-height: 0;
+    max-width: 0;
+    overflow: hidden;
+  }
+
+  &__heading {
+    display: block;
+    position: relative;
+    width: 30rem;
+    background: $color-whatsapp;
+    color: $color-white;
+    text-align: center;
+    padding: 1rem;
+    font-size: 1.4rem;
+    line-height: 1;
+    box-sizing: border-box;
+    border-top-left-radius: 5px;
+    border-top-right-radius: 5px;
+  }
+
+  .textarea {
+    width: 100%;
+    height: 100%;
+  }
+
+  &__message {
+    resize: none;
+    height: 30rem;
+    width: 100%;
+    padding: 2rem;
+    outline: none;
+    border: none;
+
+    font-size: 1.4rem;
+    color: $color-text-dark;
+
+    &::placeholder {
+      color: rgb(192, 192, 192);
+    }
+  }
+
+  &__btn {
+    width: 100%;
+    outline: none;
+    border: none;
+    line-height: 1;
+    background: $color-whatsapp;
+    padding: 1.5rem 0;
+    color: $color-white;
+    // text-align: center;
+    // display: inline-block;
+    cursor: pointer;
+    border-bottom-left-radius: 5px;
+    border-bottom-right-radius: 5px;
+    font-size: 1.5rem;
+    font-family: inherit;
+    margin-top: -1rem;
+  }
+
+  &__icon {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    background-color: $color-whatsapp;
+    width: 6rem;
+    height: 6rem;
+    border-radius: 50%;
+
+    cursor: pointer;
+    border: none;
+
+    position: absolute;
+    bottom: -7rem;
+    right: 0.1rem;
+
+    .whatsapp-icon {
+      fill: $color-white;
+      width: 2rem;
+      height: 2rem;
+    }
+
+    .close-icon {
+      fill: $color-white;
+      width: 2rem;
+      height: 2rem;
+    }
+  }
+}
+
+.show {
+  display: none;
+}

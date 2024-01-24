@@ -1,0 +1,99 @@
+.collections {
+  grid-column: main-start/main-end;
+  // grid-row: 4/5;
+  margin: 8rem 0;
+
+  &__title {
+    display: grid;
+    grid-template-rows: repeat(3, min-content);
+    margin-bottom: 8rem;
+  }
+
+  &__intro {
+    color: $color-primary;
+    margin-bottom: 2rem;
+  }
+
+  &__heading {
+    margin-bottom: 2rem;
+  }
+
+  &__dash {
+    margin-bottom: 2rem;
+  }
+}
+
+.collection-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(25rem, 1fr));
+  gap: 7rem;
+}
+
+.collection {
+  background-color: $color-secondary-light;
+  border: 2px solid $color-secondary-dark;
+  box-shadow: 1rem 1rem 4rem rgba(0, 0, 0, 0.22);
+
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  row-gap: 3.5rem;
+
+  &__img {
+    width: 100%;
+    grid-column: 1/-1;
+    grid-row: 1 / 2;
+
+    border-bottom: 1px solid $color-white;
+  }
+
+  &__name {
+    grid-column: 1/-1;
+    grid-row: 1/2;
+    justify-self: center;
+    align-self: end;
+
+    width: 50%;
+    font-size: 2rem;
+    font-family: $font-family-2;
+    font-weight: 500;
+    text-align: center;
+    padding: 0.2rem;
+    background-color: $color-secondary-dark;
+    color: $color-white;
+    font-weight: 400;
+    transform: translateY(50%);
+
+    border: 0.1px solid $color-white;
+    // border: 0.1px solid $color-secondary-dark;
+  }
+
+  &__text {
+    grid-column: 1/-1;
+    grid-row: 2/4;
+
+    background-color: $color-secondary-light;
+    color: $color-white;
+    text-align: center;
+    font-size: 1.4rem;
+    margin: 0 2rem;
+    line-height: 1.5;
+  }
+
+  &__btn {
+    grid-column: 1/-1;
+    grid-row: 4/5;
+
+    font-size: 1.5rem;
+
+    background-color: $color-secondary-dark;
+    // border-left: 1px solid $color-secondary-dark;
+    // border-right: 4px solid $color-secondary-dark;
+
+    &:hover,
+    &:active {
+      background-color: $color-white;
+      color: $color-secondary-dark;
+      // border: 2px solid $color-secondary-dark;
+    }
+  }
+}
